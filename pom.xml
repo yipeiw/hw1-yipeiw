@@ -106,7 +106,7 @@
     </dependency>
   </dependencies>
   <scm>
-  	<connection>scm:git:git@github.com:yipeiw@andrew.cmu.edu/hw1-yipeiw.git</connection>
-  	<developerConnection>scm:git:git@github.com:yipeiw@andrew.cmu.edu/hw1-yipeiw.git</developerConnection>
+  	<connection>scm:git:git@github.com:yipeiw/hw1-yipeiw.git</connection>
+  	<developerConnection>scm:git:git@github.com:yipeiw/hw1-yipeiw.git</developerConnection>
   </scm>
 </project>
