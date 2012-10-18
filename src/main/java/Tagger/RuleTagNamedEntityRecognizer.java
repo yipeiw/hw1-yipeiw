@@ -15,6 +15,18 @@ import edu.stanford.nlp.ling.CoreAnnotations.TokensAnnotation;
 import edu.stanford.nlp.pipeline.Annotation;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import edu.stanford.nlp.util.CoreMap;
+/**
+ * Apply orthographical rules to recignize Gen entity.
+ * 
+ * rules set:
+ * --length of single word
+ * --capital char besides the first char
+ * --whether exist some special symbol, like -,.,(,)
+ * --whether  a mix of letters and digits
+ * 
+ * @param int HighThreshold. used in the first rule in rule set 
+ * @param char[] SpecialList. used in the third rule in rule set
+ */
 
 public class RuleTagNamedEntityRecognizer {
 
@@ -35,8 +47,6 @@ public class RuleTagNamedEntityRecognizer {
       List<CoreLabel> candidate = new ArrayList<CoreLabel>();
       for (CoreLabel token : sentence.get(TokensAnnotation.class)) {
         String phrase = token.originalText();
-
-        // System.out.printf("token: %s\n", phrase);
 
         if (IsGenByRuleSet(phrase)) {
           candidate.add(token);
@@ -61,14 +71,10 @@ public class RuleTagNamedEntityRecognizer {
   public boolean IsGenByRuleSet(String text) {
     String[] words = text.split("[ ]");
 
-    // length of single word
+    
     int HighThreshold = 10;
     boolean rule1 = IsSpecialLenSingleWord(HighThreshold, words);
 
-    // othology characteristic
-    // --capital char besides the first char
-    // --whether exist some special symbol, like -,.,(,)
-    // --whether exist digits
     boolean rule2 = SearchCapitalCharInWord(words);
 
     boolean rule3 = SearchDigitWord(words);

@@ -1,4 +1,7 @@
 package Tagger;
+/**
+ * Support text processing function.
+ */
 
 public class Utility {
 

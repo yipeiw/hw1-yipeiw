@@ -12,6 +12,11 @@ import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
 
+/**
+ * Use the POSTaggerNamedEntityRecognizer to do the annotation
+ * responsible for transform the result of tool into annotation
+ */
+
 public class POSAnnotator extends JCasAnnotator_ImplBase {
 
   @Override

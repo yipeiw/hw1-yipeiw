@@ -9,6 +9,12 @@ import org.apache.uima.collection.CollectionReader_ImplBase;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.util.Progress;
 
+/**
+ * Read input file and put each line into the CAS document text
+ * process the file sentence by sentence
+ * @param Input. The file path of input file.
+ */
+
 public class CollectionSentenceReader extends CollectionReader_ImplBase {
 
   public static final String PARAM_INPUT="Input";
@@ -39,7 +45,7 @@ public class CollectionSentenceReader extends CollectionReader_ImplBase {
       e.printStackTrace();
     }
     
-    System.out.println(currentLine);
+    //System.out.println(currentLine);
   }
   
   @Override

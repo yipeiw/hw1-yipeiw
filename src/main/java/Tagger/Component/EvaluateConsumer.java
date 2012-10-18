@@ -15,6 +15,12 @@ import org.apache.uima.resource.ResourceProcessException;
 import Tagger.Gen;
 import Tagger.Utility;
 
+/**
+ * Evaluate the performance.
+ * support measure of precision and recall
+ * load the whole answer set at the first time called
+ */
+
 public class EvaluateConsumer extends CasConsumer_ImplBase {
 
   public class Annotation {

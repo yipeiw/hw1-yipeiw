@@ -1,6 +1,12 @@
 package Tagger.Component;
 
 import java.io.*;
+
+/**
+ * Collect the annotations and output in required format into a user defined file
+ * @param Output. The output file path of result.
+ */
+
 import java.util.Iterator;
 
 import org.apache.uima.cas.CAS;

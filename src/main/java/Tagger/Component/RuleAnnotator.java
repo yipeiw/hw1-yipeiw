@@ -21,6 +21,12 @@ import Tagger.Gen;
 import Tagger.RuleTagNamedEntityRecognizer;
 import Tagger.Utility;
 
+
+/**
+ * Use the RuleTaggerNamedEntityRecognizer to do the annotation
+ * responsible for transform the result of tool into annotation
+ */
+
 public class RuleAnnotator extends JCasAnnotator_ImplBase {
 
   @Override
@@ -28,8 +34,6 @@ public class RuleAnnotator extends JCasAnnotator_ImplBase {
 
     String text = aJcas.getDocumentText();
     text = text.trim();
-
-    // System.out.println("tagger");
 
     // extract id and sentence text
     int firstSpace = text.indexOf(' ');
