@@ -29,10 +29,6 @@ public class POSAnnotator extends JCasAnnotator_ImplBase {
     // extract id and sentence text
     int firstSpace = text.indexOf(' ');
 
-    //if (firstSpace != 14) {
-    //  System.out.printf("error space pos: %d", firstSpace);
-    //}
-
     String ID = text.substring(0, firstSpace);
     String sentence = text.substring(firstSpace + 1);
 
@@ -69,12 +65,6 @@ public class POSAnnotator extends JCasAnnotator_ImplBase {
       annot.setSource("POS");
 
       annot.addToIndexes();
-
-      //System.out.println("\nannotation");
-
-      //System.out.printf("Prechars: %d\n", PreNum);
-      //System.out.println(annot.getCoveredText());
-      //System.out.println(annot.getSentenceID());
     }
   }
 

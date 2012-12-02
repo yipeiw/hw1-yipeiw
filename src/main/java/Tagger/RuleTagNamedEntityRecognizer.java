@@ -16,7 +16,7 @@ import edu.stanford.nlp.pipeline.Annotation;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import edu.stanford.nlp.util.CoreMap;
 /**
- * Apply orthographical rules to recignize Gen entity.
+ * Apply orthographical rules to recognize Gen entity.
  * 
  * rules set:
  * --length of single word
@@ -71,10 +71,14 @@ public class RuleTagNamedEntityRecognizer {
   public boolean IsGenByRuleSet(String text) {
     String[] words = text.split("[ ]");
 
-    
+    // length of single word
     int HighThreshold = 10;
     boolean rule1 = IsSpecialLenSingleWord(HighThreshold, words);
 
+    // othology characteristic
+    // --capital char besides the first char
+    // --whether exist some special symbol, like -,.,(,)
+    // --whether exist digits
     boolean rule2 = SearchCapitalCharInWord(words);
 
     boolean rule3 = SearchDigitWord(words);
